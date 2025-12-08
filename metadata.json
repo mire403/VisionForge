@@ -1,0 +1,5 @@
+{
+  "name": "VisionForge",
+  "description": "一个专业的 AI 工作台，用于批量图片处理、训练数据准备和基于 Google Gemini 模型的提示词工程。",
+  "requestFramePermissions": []
+}
