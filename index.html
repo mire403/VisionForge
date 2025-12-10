@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VisionForge Studio</title>
+    <!-- Fonts: Inter (with Features) / JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+            },
+            colors: {
+              clay: {
+                bg: '#F2F2F7',         // System Gray 6 (Warm)
+                surface: '#FFFFFF',    // Pure White
+                subtle: '#E5E5EA',     // System Gray 4
+                text: '#000000',       // Pure Black
+                subtext: '#86868B',    // Slate Gray
+                orange: '#FF9500',     // Warm Orange
+                red: '#FF3B30',        // Vibrant Red
+                blue: '#007AFF',       // System Blue
+                mint: '#34C759',       // Mint Green
+                input: '#F2F2F7',      // Soft Input BG
+              }
+            },
+            boxShadow: {
+              'clay': '0 20px 40px -12px rgba(0,0,0,0.08), 0 2px 8px -2px rgba(0,0,0,0.04)',
+              'float': '0 12px 24px -6px rgba(0,0,0,0.06)',
+              'inner-soft': 'inset 0 2px 4px 0 rgba(0,0,0,0.03)',
+              'glow-red': '0 8px 20px -6px rgba(255, 59, 48, 0.4)',
+            },
+            borderRadius: {
+              '4xl': '2.5rem',
+              '5xl': '3rem',
+            },
+            animation: {
+              'slide-up': 'slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'pop': 'pop 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+            },
+            keyframes: {
+              slideUp: {
+                '0%': { transform: 'translateY(40px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' },
+              },
+              pop: {
+                '0%': { transform: 'scale(0.95)' },
+                '100%': { transform: 'scale(1)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      :root {
+        --ease-apple: cubic-bezier(0.25, 1, 0.5, 1);
+      }
+      
+      body { 
+        background-color: #F2F2F7;
+        color: #1D1D1F;
+        font-family: 'Inter', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        /* Enable stylistic sets for Inter to look more geometric/Apple-like */
+        font-feature-settings: "cv05", "cv08", "ss01"; 
+        overflow: hidden;
+      }
+      
+      /* Subtle Noise Texture for Premium Feel */
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+        pointer-events: none;
+        z-index: 50;
+      }
+
+      /* Hidden Scrollbar */
+      ::-webkit-scrollbar { display: none; }
+
+      /* Apple Clay Input Style */
+      .input-clay {
+        background: #F2F2F7;
+        border: none;
+        border-radius: 12px;
+        padding: 12px 16px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #1D1D1F;
+        box-shadow: inset 0 1px 2px rgba(0,0,0,0.03);
+        transition: all 0.3s var(--ease-apple);
+      }
+      .input-clay:focus {
+        background: #FFFFFF;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05), inset 0 0 0 1.5px #E5E5EA;
+        outline: none;
+      }
+      .input-clay::placeholder { color: #8E8E93; }
+
+      /* Glass Overlay */
+      .glass-card {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255,255,255,0.6);
+      }
+
+      input[type=range] {
+        -webkit-appearance: none;
+        background: transparent;
+      }
+      input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        height: 24px;
+        width: 24px;
+        border-radius: 50%;
+        background: #FFFFFF;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        margin-top: -10px;
+        cursor: pointer;
+      }
+      input[type=range]::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 4px;
+        background: #E5E5EA;
+        border-radius: 4px;
+      }
+
+      * { outline: none; }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/client": "https://aistudiocdn.com/react-dom@^19.2.1/client",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0",
+    "recharts": "https://aistudiocdn.com/recharts@^3.5.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
