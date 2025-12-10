@@ -1,10 +1,29 @@
-# VisionForge — 大模型图片训练 & 描述工具生成器
+ # VisionForge — 大模型图片训练 & 描述工具生成器
 
-一个面向图像训练数据准备与批量标注的轻量级桌面/网页工具。支持自定义模型API、即时可视化、JSONL导出及统计分析。
+<p align="center">
+  <img src="https://img.shields.io/badge/VisionForge-AI%20Image%20Processing-yellow" />
+
+  <img src="https://img.shields.io/badge/Author-Haoze%20Zheng-blue" />
+  
+  <img src="https://img.shields.io/badge/compatible AI-Google%20%7C%20OpenAI%20%7C%20DeepSeek%20%7C%20Qwen%20%7C%20Claude%20%7C%20GLM-green" />
+
+  <img src="https://img.shields.io/badge/Batch%20Processing-Yes-blueviolet" />
+
+  <img src="https://img.shields.io/badge/Stack-TypeScript%20%7C%20React%20%7C%20TS%20%7C%20Vite-3178c6" />
+
+ <img src="https://img.shields.io/badge/Version-1.0.0-lightgrey?style=flat" />
+
+  <img src="https://img.shields.io/badge/Status-Active-success?style=flat-square" />
+
+ <img src="https://img.shields.io/badge/License-MIT-yellow" />
+</p>
+
+
+一个面向图像训练数据准备与批量标注的轻量级桌面/网页工具。支持多图片导入、自定义模型API、即时可视化、JSONL导出及统计分析。
 
 <div align="center"> <img src="https://github.com/mire403/VisionForge/blob/main/picture/%E4%B8%BB%E9%A1%B5.png" alt="主页" width="880"/> <p style="font-size:12px;color:#94a3b8">主页</p> </div>
 
-## ✨ 项目亮点
+## 项目亮点
 
 **✅ 多提供商 & 自定义API支持**：预置 Google / OpenAI / DeepSeek / 豆包(Doubao) / 通义千问(QWEN) / GLM / Claude，且可输入任意 Base URL + API Key + Model ID。
 
@@ -20,7 +39,7 @@
 
 **✅ 导出功能**：标准 JSONL（每行一条）、可选扩展字段、TXT 报告（统计）及图表导出。
 
-## 📷 页面使用图片展示
+## 页面使用图片展示
 
 **主页（导入文件后，显示缩略图及数量）**
 <div align="center"> <img src="https://github.com/mire403/VisionForge/blob/main/picture/%E4%B8%BB%E9%A1%B5%E5%AF%BC%E5%85%A5%E6%96%87%E4%BB%B6%E5%90%8E.png" width="880"/> <p style="font-size:12px;color:#94a3b8">上传文件夹/图片后会自动预览与统计数量，未进行训练的图做模糊化处理</p> </div>
@@ -52,11 +71,11 @@
 **AI 优化后的 Prompt 输出（可一键填充到主 Prompt）**
 <div align="center"> <img src="https://github.com/mire403/VisionForge/blob/main/picture/ai%E4%BC%98%E5%8C%96%E6%8F%90%E7%A4%BA%E8%AF%8D%E8%BE%93%E5%87%BA.png" width="880"/> <p style="font-size:12px;color:#94a3b8">把生成的专业化 Prompt 直接应用到训练流程中</p> </div>
 
-## 📐 产品概念设计
+## 产品概念设计
 
 VisionForge面向工程师与数据标注人员，目标是把“图片 → 结构化训练样本（JSONL）”这个流程变得快捷、可复现、可追溯。它在前端实现批量上传、Prompt管理、运行队列、实时日志与统计可视化，后端以可插拔的AI Provider Adapter调用任意兼容模型生成结构化输出。
 
-## 🧭 UI 原型
+## UI 设计
 
 ### 侧栏（左） — API 配置 / 输入 / 输出选项 / 操作按钮
 
@@ -74,7 +93,7 @@ Base URL、API Key、Model ID（Custom 情况下可编辑）
 
 左：主 Prompt 文本域（用于图片标注）
 
-右：AI 优化助手文本域 + ⚡ 优化按钮 → 一键填充
+右：AI 优化助手文本域 +  优化按钮 → 一键填充
 
 ### 主区域 — 中间显示区
 
@@ -120,7 +139,7 @@ Tabs：词频排行 / 置信度直方图 / 置信度曲线（可切换）
 
 每一行为单独 JSON（换行分隔），方便训练管线逐行读取。
 
-## 🔁 核心流程
+## 核心流程
 
 1.用户配置 Provider（或使用默认）与 Model ID / API Key。
 
@@ -138,7 +157,7 @@ Tabs：词频排行 / 置信度直方图 / 置信度曲线（可切换）
 
 5.运行结束 → 用户可导出 JSONL、TXT 报告与 Charts。
 
-## 🧩 后端与架构说明（Adapter Pattern）
+## 后端与架构说明（Adapter Pattern）
 
 项目设计为前端为主的 SPA（React + TypeScript），服务层封装为 services/* adapter：
 
@@ -164,7 +183,7 @@ utils/fileHelpers.ts：JSONL 解析/生成、统计 TXT 生成、文件下载 he
 
 支持“自定义” Provider，方便对接企业内部 API 或代理地址
 
-## 🧪 API 调用模板 示例（三家示例）
+## API 调用模板 示例（三家示例）
 
 下面示例仅为调用模板，具体字段请根据目标 API 文档微调（timeout、multipart 等）
 
@@ -216,7 +235,7 @@ const parsed = JSON.parse(cleanedContent);
 
 多数第三方厂商提供 OpenAI-兼容接口或自定义兼容层，请在 Base URL 中填写对应 endpoint（或代理地址）。
 
-**🧾 关键代码片段（摘录自项目，供快速使用）**
+**关键代码片段（摘录自项目，供快速使用）**
 
 **types.ts（核心类型）**
 
@@ -261,7 +280,7 @@ export const generateJsonlExport = (items: ImageItem[]): string => {
 
 runProcessing()：收集 items 队列、逐个调用 analyzeImage(file, prompt, config, options)，更新 item.status & item.result，更新进度 bar 与 StatsData。
 
-## 🔬 JSONL 输入（导入）说明
+## JSONL 输入（导入）说明
 
 **支持字段映射（自动识别）**：
 
@@ -279,7 +298,7 @@ caption / prompt_output → 已有的描述（导入为原始 JSONL 时会保留
 {"image":"img001.png","caption":"a road with cars","meta":{"source":"collected"}}
 ```
 
-## ✅ 未来可扩展功能
+## 未来可扩展功能
 
  **半自动标注核验模式**：AI 先生成候选 caption/tags → 人工批量确认/修正 → 保存为最终 JSONL。
 
@@ -295,10 +314,10 @@ caption / prompt_output → 已有的描述（导入为原始 JSONL 时会保留
 
  **更高级可视化**：PCA/t-SNE 可视化 embedding、词云、交互式点选样本。
 
- **链接本地模型与gpu**:未来可尝试看是否可以链接需部署本地的模型权重文件并调用本地or服务器端的gpu进行数据处理。
+ **链接本地模型与gpu**：未来可尝试看是否可以链接需部署本地的模型权重文件并调用本地or服务器端的gpu进行数据处理。
 
 
-## 🚀 快速上手（Run Locally）
+## 快速上手（Run Locally）
 
 1.克隆项目
 
@@ -352,7 +371,7 @@ docker build -t visionforge .
 docker run -p 3000:3000 visionforge
 ```
 
-## 🔐 安全与部署建议
+## 安全与部署建议
 
 **API Key 管理**：建议在生产部署时使用后端中继（server-side proxy），避免前端直接暴露 API Key。
 
@@ -360,7 +379,7 @@ docker run -p 3000:3000 visionforge
 
 **合规**：处理用户数据（尤其遥感、人物图片）时，注意隐私与合规性问题。
 
-## 📦 常见问题 & Tips
+## 常见问题 & Tips
 
 Q: 我可以直接把 OpenAI Key 填到前端吗？
 
@@ -374,17 +393,11 @@ Q: 如果 JSONL 的 image 字段是相对路径怎么办？
 
 A: 上传图片时请保证文件名一致或写入同级目录以便匹配，工具会根据文件名做匹配。
 
-## ❤️ 致谢
-
-UI 使用 Tailwind CSS（暗色主题）。
-
-Charts 使用 Recharts（直方图 / 曲线 / 条形图）。
-
-文件处理与导出都在 utils/fileHelpers.ts 中统一实现（JSONL 导出同时保留导入的原始字段以便可溯）。
+## 致谢
 
 如果你觉得这个项目对你有帮助，请给仓库**点一个 ⭐ Star**！
 你的鼓励是我继续优化此项目的最大动力 😊
 
-## 📣 结语
+## 结语
 
-VisionForge 帮你把“海量图片 → 高质量训练样本（JSONL）”这件事变得可视、可控、可导出。无论你要做遥感标注、数据集清洗、微调数据准备或只是想快速批量生成 caption，这个工具都能显著提升效率。赶快把你的图片拖进来，试试 AI 优化助手吧！🚀
+VisionForge 帮你把“海量图片 → 高质量训练样本（JSONL）”这件事变得可视、可控、可导出。无论你要做遥感标注、数据集清洗、微调数据准备或只是想快速批量生成 caption，这个工具都能显著提升效率。赶快把你的图片拖进来，试试 AI 优化助手吧！
