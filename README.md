@@ -28,11 +28,11 @@
 **模型选择界面（预置 + 可自定义）**
 <div align="center"> <img src="https://github.com/mire403/VisionForge/blob/main/picture/%E6%A8%A1%E5%9E%8B%E9%80%89%E6%8B%A9.png" /> <p style="font-size:12px;color:#94a3b8">预置 Provider 列表 + 可编辑 Base URL / API Key / 自定义 Model ID</p> </div>
 
-**默认输出（仅勾选“标签”，使用默认 Prompt）**
+**默认输出（仅勾选“标签”，使用默认 Prompt）列表**
 <div align="center"> <img src="https://github.com/mire403/VisionForge/blob/main/picture/%E9%BB%98%E8%AE%A4%E8%BE%93%E5%87%BA%EF%BC%88%E6%A0%87%E7%AD%BE%2B%E9%BB%98%E8%AE%A4%E6%8F%90%E7%A4%BA%E8%AF%8D%EF%BC%89.png" width="880"/> <p style="font-size:12px;color:#94a3b8">默认只勾选标签时的 JSONL 输出示例与列表视图</p> </div>
 
-**默认输出（仅勾选“标签”，使用默认 Prompt）**
-<div align="center"> <img src="https://github.com/mire403/VisionForge/blob/main/picture/%E9%BB%98%E8%AE%A4%E8%BE%93%E5%87%BA%EF%BC%88%E6%A0%87%E7%AD%BE%2B%E9%BB%98%E8%AE%A4%E6%8F%90%E7%A4%BA%E8%AF%8D%EF%BC%89.png" width="880"/> <p style="font-size:12px;color:#94a3b8">默认只勾选标签时的 JSONL 输出示例与网格视图（训练完成的图片则抹除模糊）</p> </div>
+**默认输出（仅勾选“标签”，使用默认 Prompt）网格**
+<div align="center"> <img src="https://github.com/mire403/VisionForge/blob/main/picture/%E9%BB%98%E8%AE%A4%E8%BE%93%E5%87%BA%EF%BC%88%E6%A0%87%E7%AD%BE%2B%E9%BB%98%E8%AE%A4%E6%8F%90%E7%A4%BA%E8%AF%8D%EF%BC%891.png" width="880"/> <p style="font-size:12px;color:#94a3b8">默认只勾选标签时的 JSONL 输出示例与网格视图（训练完成的图片则抹除模糊）</p> </div>
 
 **全部勾选输出（含 OCR / colors / category / reasoning 等）**
 <div align="center"> <img src="https://github.com/mire403/VisionForge/blob/main/picture/%E5%85%A8%E9%83%A8%E5%8B%BE%E9%80%89%E5%90%8E%E7%9A%84%E8%BE%93%E5%87%BA.png" alt="主页" width="880"/> <p style="font-size:12px;color:#94a3b8">当勾选更多输出后，结果 JSONL 每行会包含更多字段</p> </div>
@@ -44,7 +44,7 @@
 <div align="center"> <img src="https://github.com/mire403/VisionForge/blob/main/picture/%E7%BD%AE%E4%BF%A1%E5%BA%A6%E6%9B%B2%E7%BA%BF.png" width="880"/> <p style="font-size:12px;color:#94a3b8">把样本按置信度排序并作曲线</p> </div>
 
 **热门标签直方图（实时）**
-<div align="center"> <img src="https://github.com/mire403/VisionForge/blob/main/picture/%E7%BD%AE%E4%BF%A1%E5%BA%A6%E7%9B%B4%E6%96%B9%E5%9B%BE.png" width="880"/> <p style="font-size:12px;color:#94a3b8">热门标签出现次数</p> </div>
+<div align="center"> <img src="https://github.com/mire403/VisionForge/blob/main/picture/%E7%83%AD%E9%97%A8%E6%A0%87%E7%AD%BE.png" width="880"/> <p style="font-size:12px;color:#94a3b8">热门标签出现次数</p> </div>
 
 **AI 优化助手示例：输入“遥感标注意图” → 优化输出（先是总结，再给出专业 Prompt）**
 <div align="center"> <img src="https://github.com/mire403/VisionForge/blob/main/picture/ai%E4%BC%98%E5%8C%96%E6%80%BB%E7%BB%93.png" width="880"/> <p style="font-size:12px;color:#94a3b8">AI 优化助手对用户意图进行结构化扩写</p> </div>
