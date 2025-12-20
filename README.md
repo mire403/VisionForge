@@ -398,6 +398,8 @@ A: 上传图片时请保证文件名一致或写入同级目录以便匹配，�
 如果你觉得这个项目对你有帮助，请给仓库**点一个 ⭐ Star**！
 你的鼓励是我继续优化此项目的最大动力 😊
 
+<div align="center"> <img src="https://github.com/mire403/VisionForge/blob/main/star-history-20251220.png" width="880"/> <p style="font-size:12px;color:#94a3b8">Star历史</p> </div>
+
 ## 结语
 
 VisionForge 帮你把“海量图片 → 高质量训练样本（JSONL）”这件事变得可视、可控、可导出。无论你要做遥感标注、数据集清洗、微调数据准备或只是想快速批量生成 caption，这个工具都能显著提升效率。赶快把你的图片拖进来，试试 AI 优化助手吧！
