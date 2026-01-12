@@ -395,7 +395,7 @@ A: 上传图片时请保证文件名一致或写入同级目录以便匹配，�
 
 ## 致谢
 
-如果你觉得这个项目对你有帮助，请给仓库**点一个
+如果你觉得这个项目对你有帮助，请给仓库**点一个 ⭐ Star**！
 你的鼓励是我继续优化此项目的最大动力 😊
 
 <div align="center"> <img src="https://github.com/mire403/VisionForge/blob/main/star-history-20251220.png" width="880"/> <p style="font-size:12px;color:#94a3b8">Star历史</p> </div>
